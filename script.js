@@ -21,15 +21,11 @@ let stats = {
     image: "images/coins.jpg",
     options: [{ text: "Забрать всё", nextScene: "end", changes: { Деньги: +100, Настроение: +50 } }]
   },
- left: {
-  text: "Вас съела медведица.",
+  left: {
+  text: "Вас съела медведица ☠️.",
   image: "images/bear.jpg",
   options: [
-    {
-      text: "Начать заново",
-      nextScene: "start",
-      resetGame: true // Специальный флаг для перезапуска игры
-    }
+    { text: "Попробовать снова", nextScene: "start", changes: null, reset: true }
   ]
 },
   end: {
@@ -72,15 +68,15 @@ let stats = {
     button.addEventListener("click", () => {
   choicesHistory.push(option.text);
 
-  if (option.resetGame) {
-    // Сброс статов к начальным значениям
+  // Сброс характеристик, если указано reset
+  if (option.reset) {
     stats = {
       Здоровье: 100,
       Настроение: 0,
       Деньги: 0
     };
   } else if (option.changes) {
-    // Изменение статов как обычно
+    // Иначе применяем изменения как обычно
     for (let key in option.changes) {
       stats[key] += option.changes[key];
     }
@@ -88,6 +84,7 @@ let stats = {
 
   currentSceneId = option.nextScene;
   showScene(option.nextScene);
+  
   updateStatsDisplay();
 });
     optionsEl.appendChild(button);
