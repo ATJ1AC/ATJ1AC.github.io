@@ -1,94 +1,95 @@
 body {
-    background-color: #1e1e2f;
-    color: #fff;
-    font-family: 'Segoe UI', sans-serif;
-    padding: 20px;
-  }
-  
-  /* Основной флекс-обёртка */
-  .game-wrapper {
-    display: flex;
-    gap: 40px;
-    max-width: 1400px;
-    margin: auto;
-  }
-  
-  /* Контейнер квеста */
-  .game-container {
-    flex: 2;
-    background-color: #2e2e3e;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  /* Блок характеристик */
-  .stats-container {
-    flex: 1;
-    background-color: #2e2e3e;
-    padding: 20px;
-    border-radius: 10px;
-    min-width: 250px;
-  }
-  
-  /* Выравнивание текста по ширине */
-  #story-text,
-  .history-item,
-  #stats-list li {
-    text-align: justify;
-  }
-  
-  #story-text {
-    margin-bottom: 20px;
-  }
-  
-  .options-row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-  
-  .options-row button {
-    margin-right: 15px;
-    margin-bottom: 15px;
-  }
-  
-  .options-row button:last-child {
-    margin-right: 0;
-  }
-  
-  button {
-    padding: 10px 15px;
-    background-color: #4a4aff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    flex: 1 1 auto;
-    min-width: 100px;
-    text-align: center;
-  }
-  
-  button:hover {
-    background-color: #6a6aff;
-  }
-  
-  #history {
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid #555;
-    font-size: 0.9em;
-    color: #ccc;
-  }
-  
-  .history-item {
-    margin-bottom: 5px;
-  }
+  background-color: #40916c; /* Светло-бежевый фон */
+  color: #6c584c; /* Темно-коричневый текст */
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+}
 
-  #scene-image {
+/* Основной флекс-обёртка */
+.game-wrapper {
+  display: flex;
+  gap: 40px;
+  max-width: 1080px;
+  margin: auto;
+}
+
+/* Контейнер квеста */
+.game-container {
+  flex: 2;
+  background-color: #dde5b6; /* Светло-зеленовато-бежевый */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Блок характеристик */
+.stats-container {
+  flex: 1;
+  background-color: #ccd5ae; /* Мягкий зелёный */
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 250px;
+}
+
+/* Выравнивание текста по ширине */
+#story-text,
+.history-item,
+#stats-list li {
+  text-align: justify;
+}
+
+#story-text {
+  margin-bottom: 20px;
+}
+
+.options-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.options-row button {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.options-row button:last-child {
+  margin-right: 0;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #a98467; /* Землистый оттенок */
+  color: white; /* Белый текст на кнопках */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1 1 auto;
+  min-width: 100px;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #6c584c; /* Темнее при наведении */
+}
+
+#history {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #a98467;
+  font-size: 0.9em;
+  color: #6c584c;
+  display: none; /* Скрываем по умолчанию */
+}
+
+.history-item {
+  margin-bottom: 5px;
+}
+
+#scene-image {
   display: none;
   margin: 40px auto 0 auto;
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(108, 88, 76, 0.3); /* Акцент на темном коричневом */
 }

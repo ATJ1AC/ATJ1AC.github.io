@@ -1,7 +1,7 @@
 // Характеристики персонажа
 let stats = {
     Здоровье: 100,
-    Удача: 50,
+    Настроение: 0,
     Деньги: 0
   };
   
@@ -11,22 +11,23 @@ let stats = {
     text: "Вы оказались в темном лесу. Куда пойдете?",
     image: "images/start.jpg", // Путь к картинке
     options: [
-      { text: "Направо", nextScene: "right", changes: { Удача: +10 } },
-      { text: "Налево", nextScene: "left", changes: { Здоровье: -20 } }
+      { text: "Налево", nextScene: "left", changes: { Здоровье: -100 } },
+      { text: "Направо", nextScene: "right", changes: { Настроение: +50 } }
+      
     ]
   },
   right: {
     text: "Вы нашли сундук с золотом!",
-    image: "images/right.jpg",
-    options: [{ text: "Забрать всё", nextScene: "end", changes: { Деньги: +100 } }]
+    image: "images/coins.jpg",
+    options: [{ text: "Забрать всё", nextScene: "end", changes: { Деньги: +100, Настроение: +50 } }]
   },
   left: {
-    text: "Вас съела медведица.",
+    text: "Вас съела медведица ☠️.",
     image: "images/bear.jpg",
     options: []
   },
   end: {
-    text: "Спасибо за игру!",
+    text: "Спасибо за игру! 😘 ",
     image: "images/end.jpg",
     options: []
   }
@@ -73,7 +74,7 @@ let stats = {
 
       currentSceneId = option.nextScene;
       showScene(option.nextScene);
-      updateHistoryDisplay();
+      
       updateStatsDisplay();
     });
     optionsEl.appendChild(button);
@@ -102,8 +103,24 @@ let stats = {
       statsListEl.appendChild(li);
     }
   }
+
+  const toggleHistoryBtn = document.getElementById("toggle-history-btn");
+
+let historyShown = false;
+
+toggleHistoryBtn.addEventListener("click", () => {
+  historyShown = !historyShown;
+  if (historyShown) {
+    updateHistoryDisplay();
+    historyEl.style.display = "block";
+    toggleHistoryBtn.textContent = "Скрыть историю";
+  } else {
+    historyEl.style.display = "none";
+    toggleHistoryBtn.textContent = "Показать историю";
+  }
+});
   
   // Запуск игры
   showScene(currentSceneId);
-  updateHistoryDisplay();
+  
   updateStatsDisplay();
