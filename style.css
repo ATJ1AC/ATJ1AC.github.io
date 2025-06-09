@@ -1,0 +1,85 @@
+body {
+    background-color: #1e1e2f;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+  }
+  
+  /* Основной флекс-обёртка */
+  .game-wrapper {
+    display: flex;
+    gap: 40px;
+    max-width: 1400px;
+    margin: auto;
+  }
+  
+  /* Контейнер квеста */
+  .game-container {
+    flex: 2;
+    background-color: #2e2e3e;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Блок характеристик */
+  .stats-container {
+    flex: 1;
+    background-color: #2e2e3e;
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 250px;
+  }
+  
+  /* Выравнивание текста по ширине */
+  #story-text,
+  .history-item,
+  #stats-list li {
+    text-align: justify;
+  }
+  
+  #story-text {
+    margin-bottom: 20px;
+  }
+  
+  .options-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .options-row button {
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .options-row button:last-child {
+    margin-right: 0;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #4a4aff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1 1 auto;
+    min-width: 100px;
+    text-align: center;
+  }
+  
+  button:hover {
+    background-color: #6a6aff;
+  }
+  
+  #history {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #555;
+    font-size: 0.9em;
+    color: #ccc;
+  }
+  
+  .history-item {
+    margin-bottom: 5px;
+  }
