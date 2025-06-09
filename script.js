@@ -7,26 +7,30 @@ let stats = {
   
   // Объект сцены
   const scenes = {
-    start: {
-      text: "Вы оказались в темном лесу. Куда пойдете?",
-      options: [
-        { text: "Направо", nextScene: "right", changes: { Удача: +10 } },
-        { text: "Налево", nextScene: "left", changes: { Здоровье: -20 } }
-      ]
-    },
-    right: {
-      text: "Вы нашли сундук с золотом!",
-      options: [{ text: "Забрать всё", nextScene: "end", changes: { Деньги: +100 } }]
-    },
-    left: {
-      text: "Вас съела медведица.",
-      options: []
-    },
-    end: {
-      text: "Спасибо за игру!",
-      options: []
-    }
-  };
+  start: {
+    text: "Вы оказались в темном лесу. Куда пойдете?",
+    image: "images/start.jpg", // Путь к картинке
+    options: [
+      { text: "Направо", nextScene: "right", changes: { Удача: +10 } },
+      { text: "Налево", nextScene: "left", changes: { Здоровье: -20 } }
+    ]
+  },
+  right: {
+    text: "Вы нашли сундук с золотом!",
+    image: "images/right.jpg",
+    options: [{ text: "Забрать всё", nextScene: "end", changes: { Деньги: +100 } }]
+  },
+  left: {
+    text: "Вас съела медведица.",
+    image: "images/bear.jpg",
+    options: []
+  },
+  end: {
+    text: "Спасибо за игру!",
+    image: "images/end.jpg",
+    options: []
+  }
+};
   
   let choicesHistory = []; // История выборов (текст)
   let currentSceneId = "start";
@@ -38,34 +42,43 @@ let stats = {
   
   // Функция отображения сцены
   function showScene(sceneId) {
-    const scene = scenes[sceneId];
-    if (!scene) return;
-  
-    currentSceneId = sceneId;
-    storyTextEl.textContent = scene.text;
-    optionsEl.innerHTML = "";
-  
-    scene.options.forEach(option => {
-      const button = document.createElement("button");
-      button.textContent = option.text;
-      button.addEventListener("click", () => {
-        choicesHistory.push(option.text);
-  
-        // Применяем изменения к характеристикам
-        if (option.changes) {
-          for (let key in option.changes) {
-            stats[key] += option.changes[key];
-          }
-        }
-  
-        currentSceneId = option.nextScene;
-        showScene(option.nextScene);
-        updateHistoryDisplay();
-        updateStatsDisplay();
-      });
-      optionsEl.appendChild(button);
-    });
+  const scene = scenes[sceneId];
+  if (!scene) return;
+
+  currentSceneId = sceneId;
+  storyTextEl.textContent = scene.text;
+  optionsEl.innerHTML = "";
+
+  // Отображаем картинку, если есть
+  const imageEl = document.getElementById("scene-image");
+  if (scene.image) {
+    imageEl.src = scene.image;
+    imageEl.style.display = "block";
+  } else {
+    imageEl.style.display = "none";
   }
+
+  // Создание кнопок
+  scene.options.forEach(option => {
+    const button = document.createElement("button");
+    button.textContent = option.text;
+    button.addEventListener("click", () => {
+      choicesHistory.push(option.text);
+
+      if (option.changes) {
+        for (let key in option.changes) {
+          stats[key] += option.changes[key];
+        }
+      }
+
+      currentSceneId = option.nextScene;
+      showScene(option.nextScene);
+      updateHistoryDisplay();
+      updateStatsDisplay();
+    });
+    optionsEl.appendChild(button);
+  });
+}
   
   // Обновление отображения истории
   function updateHistoryDisplay() {
