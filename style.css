@@ -1,7 +1,7 @@
 body {
-  background-color: #40916c; /* Светло-бежевый фон */
-  color: #6c584c; /* Темно-коричневый текст */
-  font-family: 'Segoe UI', sans-serif;
+  background-color: #266549;
+  color: #6c584c;
+  font-family: 'Segoe UI', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
   padding: 20px;
 }
 
@@ -24,10 +24,46 @@ body {
 /* Блок характеристик */
 .stats-container {
   flex: 1;
-  background-color: #ccd5ae; /* Мягкий зелёный */
+  background-color: #000000; /* Мягкий зелёный */
   padding: 20px;
   border-radius: 10px;
   min-width: 250px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Элементы начинаются сверху */
+}
+
+.stats-container h1 {
+  margin-top: 0;               /* Убираем стандартные отступы */
+  margin-bottom: 20px;         /* Добавляем отступ снизу для отдаления от списка */
+  font-size: 2rem;             /* Размер заголовка */
+  text-align: center;          /* Центрируем текст */
+  width: 100%; /* Чтобы центрирование работало корректно */
+  color: white;
+  -webkit-text-stroke: 1px #666;
+}
+
+#stats-list li {
+  list-style-type: none;
+  margin-bottom: 8px;
+  font-size: 1.7rem; /* Увеличенный размер шрифта */
+}
+
+.stat-health {
+  color: red;
+}
+
+.stat-health-zero {
+  color: white;
+}
+
+.stat-mood {
+  color: goldenrod;
+}
+
+.stat-money {
+  color: #7CFC00; /* Светло-зелёный */
 }
 
 /* Выравнивание текста по ширине */
