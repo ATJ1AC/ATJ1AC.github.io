@@ -129,3 +129,50 @@ button:hover {
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(108, 88, 76, 0.3); /* Акцент на темном коричневом */
 }
+
+/* === Мобильная адаптация === */
+@media (max-width: 768px) {
+  .game-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: none;
+    gap: 20px;
+  }
+
+  .game-container,
+  .stats-container {
+    width: 100%;
+    min-width: auto;
+    padding: 15px;
+  }
+
+  .options-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .options-row button {
+    margin-right: 10px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    min-width: 120px;
+  }
+
+  #story-text {
+    font-size: 1rem;
+  }
+
+  .stats-container h1 {
+    font-size: 1.5rem;
+  }
+
+  #stats-list li {
+    font-size: 1.3rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+}
