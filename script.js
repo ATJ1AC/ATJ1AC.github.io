@@ -171,9 +171,6 @@ function showScene(sceneId) {
     statsListEl.appendChild(li);
   }
 }
-
-   
-
   const toggleHistoryBtn = document.getElementById("toggle-history-btn");
 
 let historyShown = false;
@@ -192,5 +189,4 @@ toggleHistoryBtn.addEventListener("click", () => {
   
   // Запуск игры
   showScene(currentSceneId);
-  
   updateStatsDisplay();

@@ -1,6 +1,6 @@
 body {
-  background-color: #266549;
-  color: #6c584c;
+  background-color: #52796f;
+  color: #dcd6be;
   font-family: 'Segoe UI', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
   padding: 20px;
 }
@@ -16,7 +16,7 @@ body {
 /* Контейнер квеста */
 .game-container {
   flex: 2;
-  background-color: #dde5b6; /* Светло-зеленовато-бежевый */
+  background-color: #354f52; /* Светло-зеленовато-бежевый */
   padding: 20px;
   border-radius: 10px;
 }
@@ -24,7 +24,7 @@ body {
 /* Блок характеристик */
 .stats-container {
   flex: 1;
-  background-color: #000000; /* Мягкий зелёный */
+  background-color: #2f3e46; /* Мягкий зелёный */
   padding: 20px;
   border-radius: 10px;
   min-width: 250px;
@@ -41,7 +41,7 @@ body {
   text-align: center;          /* Центрируем текст */
   width: 100%; /* Чтобы центрирование работало корректно */
   color: white;
-  -webkit-text-stroke: 1px #666;
+  -webkit-text-stroke: 1px #b6ad90;
 }
 
 #stats-list li {
@@ -94,8 +94,8 @@ body {
 
 button {
   padding: 10px 15px;
-  background-color: #a98467; /* Землистый оттенок */
-  color: white; /* Белый текст на кнопках */
+  background-color: #597a6b; /* Землистый оттенок */
+  color: #fefae0; /* Белый текст на кнопках */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -105,15 +105,15 @@ button {
 }
 
 button:hover {
-  background-color: #6c584c; /* Темнее при наведении */
+  background-color: #566246; /* Темнее при наведении */
 }
 
 #history {
   margin-top: 20px;
   padding-top: 10px;
-  border-top: 1px solid #a98467;
+  border-top: 1px solid #dad7cd;
   font-size: 0.9em;
-  color: #6c584c;
+  color: #dad7cd;
   display: none; /* Скрываем по умолчанию */
 }
 
@@ -127,7 +127,7 @@ button:hover {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(108, 88, 76, 0.3); /* Акцент на темном коричневом */
+  box-shadow: 0 0 15px rgba(76, 108, 83, 0.3); /* Акцент на темном коричневом */
 }
 
 /* === Мобильная адаптация === */

@@ -1,0 +1,87 @@
+/* === Общие стили === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1E1E1E;
+  color: #ecf0f1;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 40px 20px;
+  line-height: 1.6;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #bdc3c7;
+  margin-bottom: 40px;
+  display: block;
+}
+
+.sites-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-card {
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.site-title {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.site-description {
+  font-size: 1rem;
+  color: #dcdcdc;
+  margin-bottom: 15px;
+}
+
+.site-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #e3f2fd;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.site-link:hover {
+  background-color: #c9c9c9;
+}
+
+/* === Уникальные цвета для каждой карточки === */
+.card-1 { background-color: #5b8a75; } /* Лесной светло-зелёный */
+.card-2 { background-color: #bf2525; }
+.card-3 { background-color: #3155c9; }
+.card-4 { background-color: #13a429; }
+.card-5 { background-color: #0d8f8f; }
+.card-6 { background-color: #787c42; }
+.card-7 { background-color: #1ca967; }

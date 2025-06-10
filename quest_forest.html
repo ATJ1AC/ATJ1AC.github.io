@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Лесной квест</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-wrapper">
+    <!-- Левая часть - сам квест -->
+    <div class="game-container">
+      <h1>Воскресенье</h1>
+      <div id="story-text"></div>
+      <div id="options" class="options-row"></div>
+      <button id="toggle-history-btn">Показать ходы</button>
+      <div id="history"></div>
+    </div>
+
+    <!-- Правая часть - характеристики персонажа -->
+    <div class="stats-container">
+      <h1>Характеристики</h1>
+      <ul id="stats-list">
+        <!-- Сюда будут подставляться характеристики -->
+      </ul>
+    </div>
+  </div>
+  
+<img id="scene-image" src="" alt="Картинка сцены" style="display: none; margin: 40px auto 0 auto; max-width: 100%; height: auto;">
+  <script src="script.js"></script>
+</body>
+</html>
