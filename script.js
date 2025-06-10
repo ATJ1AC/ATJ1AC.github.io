@@ -8,27 +8,39 @@ let stats = {
   // Объект сцены
   const scenes = {
   start: {
-    text: "Вы оказались в темном лесу. Куда пойдете?",
-    image: "images/start.jpg", // Путь к картинке
-    options: [
-      { text: "Налево", nextScene: "left", changes: { Здоровье: -100 } },
-      { text: "Направо", nextScene: "right", changes: { Настроение: +50 } }
-      
-    ]
-  },
+  title: "Начало приключения",
+  text: "Вы оказались в темном лесу. Куда пойдете?",
+  image: "images/start.jpg",
+  options: [
+    {
+      text: "Налево",
+      nextScene: "left",
+      changes: null, // Не меняем через стандартный механизм
+      resetHealth: true // Добавляем кастомное поле
+    },
+    {
+      text: "Направо",
+      nextScene: "right",
+      changes: { Настроение: +50 }
+    }
+  ]
+},
   right: {
+    title: "Сундук с золотом",
     text: "Вы нашли сундук с золотом!",
     image: "images/coins.jpg",
     options: [{ text: "Забрать всё", nextScene: "end", changes: { Деньги: +100, Настроение: +50 } }]
   },
   left: {
-  text: "Вас съела медведица ☠️.",
-  image: "images/bear.jpg",
-  options: [
-    { text: "Попробовать снова", nextScene: "start", changes: null, reset: true }
-  ]
-},
+    title: "Плохой конец",
+    text: "Вас съела медведица ☠️.",
+    image: "images/bear.jpg",
+    options: [
+      { text: "Попробовать снова", nextScene: "start", changes: null, reset: true }
+    ]
+  },
   end: {
+    title: "Конец",
     text: "Спасибо за игру! 😘 ",
     image: "images/end.jpg",
     options: []
@@ -44,11 +56,15 @@ let stats = {
   const statsListEl = document.getElementById("stats-list");
   
   // Функция отображения сцены
-  function showScene(sceneId) {
+function showScene(sceneId) {
   const scene = scenes[sceneId];
   if (!scene) return;
 
   currentSceneId = sceneId;
+  
+  // Обновляем заголовок
+  document.querySelector(".game-container h1").textContent = scene.title;
+  
   storyTextEl.textContent = scene.text;
   optionsEl.innerHTML = "";
 
@@ -75,16 +91,22 @@ let stats = {
       Настроение: 0,
       Деньги: 0
     };
-  } else if (option.changes) {
+  } else {
+    // Если есть custom-поле resetHealth — зануляем здоровье
+    if (option.resetHealth) {
+      stats["Здоровье"] = 0;
+    }
+
     // Иначе применяем изменения как обычно
-    for (let key in option.changes) {
-      stats[key] += option.changes[key];
+    if (option.changes) {
+      for (let key in option.changes) {
+        stats[key] += option.changes[key];
+      }
     }
   }
 
   currentSceneId = option.nextScene;
   showScene(option.nextScene);
-  
   updateStatsDisplay();
 });
     optionsEl.appendChild(button);
@@ -106,13 +128,51 @@ let stats = {
   
   // Обновление отображения характеристик
   function updateStatsDisplay() {
-    statsListEl.innerHTML = "";
-    for (let key in stats) {
-      const li = document.createElement("li");
-      li.textContent = `${key}: ${stats[key]}`;
-      statsListEl.appendChild(li);
+  statsListEl.innerHTML = "";
+  for (let key in stats) {
+    const value = stats[key];
+    let iconHTML = "";
+
+    // Иконка с цветом
+    if (key === "Здоровье") {
+      if (value >= 81) {
+        iconHTML = '<span class="heart-icon">❤️</span>';
+      } else if (value >= 41) {
+        iconHTML = '<span class="heart-icon">💛</span>';
+      } else if (value >= 1) {
+        iconHTML = '<span class="heart-icon">💔</span>';
+      } else {
+        iconHTML = '<span class="death-icon">☠️</span>';
+      }
+    } else if (key === "Настроение") {
+      if (value <= 30) {
+        iconHTML = '<span class="mood-icon">😢</span>';
+      } else if (value <= 69) {
+        iconHTML = '<span class="mood-icon">😐</span>';
+      } else {
+        iconHTML = '<span class="mood-icon">😄</span>';
+      }
+    } else if (key === "Деньги") {
+      iconHTML = "💰";
     }
+
+    const li = document.createElement("li");
+    li.innerHTML = `${iconHTML} ${key}: ${value}`;
+
+    // Добавляем классы вместо инлайновых стилей
+    if (key === "Здоровье") {
+      li.classList.add(value > 0 ? "stat-health" : "stat-health-zero");
+    } else if (key === "Настроение") {
+      li.classList.add("stat-mood");
+    } else if (key === "Деньги") {
+      li.classList.add("stat-money");
+    }
+
+    statsListEl.appendChild(li);
   }
+}
+
+   
 
   const toggleHistoryBtn = document.getElementById("toggle-history-btn");
 
