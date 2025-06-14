@@ -1,0 +1,51 @@
+create table country (
+	id serial,
+	name text,
+	constraint pk_country primary key(id)
+);
+
+create table topic (
+	id serial,
+	name text,
+	description text,
+	constraint pk_topic primary key(id)
+);
+
+create table site (
+	id serial,
+	name text,
+	url text,
+	country_id integer,
+	topic_id integer,
+	constraint pk_site primary key(id),
+	constraint fk_site_for_country foreign key(country_id) references country(id),
+	constraint fk_site_for_topic foreign key(topic_id) references topic(id)
+);
+
+create table users (
+    id serial,
+    username text not null,
+    password_hash text not null,
+	country_id integer,
+	constraint pk_users primary key(id),
+	constraint fk_country foreign key(country_id) references country(id)
+);
+
+create table site_visit (
+	id serial,
+	user_id integer,
+	site_id integer,
+	login_time timestamp,
+    logout_time timestamp,
+	constraint pk_site_visit primary key(id),
+	constraint fk_sitevisit_for_users foreign key(user_id) references users(id),
+	constraint fk_sitevisit_for_site foreign key(site_id) references site(id)
+);
+
+create table comments (
+	id serial,
+	text_comments text,
+	site_visit_id integer,
+	constraint pk_comments primary key(id),
+	constraint fk_comments foreign key(site_visit_id) references site_visit(id)
+);
