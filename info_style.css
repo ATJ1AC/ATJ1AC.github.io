@@ -1,0 +1,74 @@
+/* style.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5; /* светло-серый фон */
+  color: #333;
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  color: #1e2a38;
+  font-weight: 600;
+}
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Стиль для site-card */
+.site-card {
+  background-color: #ffffff; /* белый фон карточки */
+  border: 2px solid #dbe2eb; /* мягкая рамка */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 20px;
+}
+
+.site-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.site-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.site-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #1e2a38;
+}
+
+.site-card p {
+  font-size: 1rem;
+  color: #5a6a7f;
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  margin-top: 60px;
+  color: #9fa8b0;
+}

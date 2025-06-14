@@ -1,0 +1,91 @@
+/* Обнуление стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #777;
+}
+
+.menu {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.dish {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.dish h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.comments {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-left: 3px solid #3498db;
+}
+
+.comment {
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.comment-form button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.comment-form button:hover {
+  background-color: #2980b9;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #aaa;
+  font-size: 0.9rem;
+}
