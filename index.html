@@ -6,61 +6,70 @@
   <title>Мои любимые сайты</title>
   <link rel="stylesheet" href="index_style.css" />
 </head>
-<body>
-  <h1>Мои любимые сайты</h1>
-  <p class="subtitle">Выберите сайт, чтобы перейти к нему</p>
+<body id="page">
+  <div class="content-wrapper">
+    <h1>Мои любимые сайты</h1>
+    <p class="subtitle">Выберите сайт, чтобы перейти к нему</p>
 
-  <div class="sites-container">
+    <div class="sites-container">
 
-    <!-- Текстовый квест -->
-    <div class="site-card card-1">
-      <div class="site-title">Текстовый квест</div>
-      <div class="site-description">Погрузитесь в увлекательные истории с выбором действий.</div>
-      <a href="quest_forest.html" class="site-link">Перейти</a>
+      <!-- Текстовый квест -->
+      <div class="site-card card-1">
+        <div class="site-title">Текстовый квест</div>
+        <div class="site-description">Погрузитесь в увлекательные истории с выбором действий.</div>
+        <a href="quest_forest.html" class="site-link">Перейти</a>
+      </div>
+
+      <!-- Автомобили -->
+      <div class="site-card card-2">
+        <div class="site-title">Автомобили</div>
+        <div class="site-description">Изучайте технические характеристики машин и сравнивайте модели.</div>
+        <a href="forum.html" class="site-link">Перейти</a>
+      </div>
+
+      <!-- Новости -->
+      <div class="site-card card-3">
+        <div class="site-title">Новости</div>
+        <div class="site-description">Следите за последними событиями в мире и политике.</div>
+        <a href="news.html" class="site-link">Перейти</a>
+      </div>
+
+      <!-- Доставка продуктов -->
+      <div class="site-card card-4">
+        <div class="site-title">Доставка еды</div>
+        <div class="site-description">Заказывайте продукты онлайн и получайте их быстро.</div>
+        <a href="grocery.html" class="site-link">Перейти</a>
+      </div>
+
+      <!-- Форум по рыбалке -->
+      <div class="site-card card-5">
+        <div class="site-title">Форум о рыбалке</div>
+        <div class="site-description">Обсуждайте ловлю, снасти и лучшие места для отдыха.</div>
+        <a href="fish_forum.html" class="site-link">Перейти</a>
+      </div>
+
+      <!-- Прогноз погоды -->
+      <div class="site-card card-6">
+        <div class="site-title">Прогноз погоды</div>
+        <div class="site-description">Следите за изменениями погоды в вашем городе.</div>
+        <a href="weather.html" class="site-link">Перейти</a>
+      </div>
+
+      <!-- Рецепты блюд -->
+      <div class="site-card card-7">
+        <div class="site-title">Рецепты блюд</div>
+        <div class="site-description">Находите вкусные и простые рецепты на каждый день.</div>
+        <a href="recipes.html" class="site-link">Перейти</a>
+      </div>
+
     </div>
-
-    <!-- Автомобили -->
-    <div class="site-card card-2">
-      <div class="site-title">Автомобили</div>
-      <div class="site-description">Изучайте технические характеристики машин и сравнивайте модели.</div>
-      <a href="forum.html" class="site-link">Перейти</a>
-    </div>
-
-    <!-- Новости -->
-    <div class="site-card card-3">
-      <div class="site-title">Новости</div>
-      <div class="site-description">Следите за последними событиями в мире и политике.</div>
-      <a href="news.html" class="site-link">Перейти</a>
-    </div>
-
-    <!-- Доставка продуктов -->
-    <div class="site-card card-4">
-      <div class="site-title">Доставка еды</div>
-      <div class="site-description">Заказывайте продукты онлайн и получайте их быстро.</div>
-      <a href="grocery.html" class="site-link">Перейти</a>
-    </div>
-
-    <!-- Форум по рыбалке -->
-    <div class="site-card card-5">
-      <div class="site-title">Форум о рыбалке</div>
-      <div class="site-description">Обсуждайте ловлю, снасти и лучшие места для отдыха.</div>
-      <a href="fishing_forum.html" class="site-link">Перейти</a>
-    </div>
-
-    <!-- Прогноз погоды -->
-    <div class="site-card card-6">
-      <div class="site-title">Прогноз погоды</div>
-      <div class="site-description">Следите за изменениями погоды в вашем городе.</div>
-      <a href="weather.html" class="site-link">Перейти</a>
-    </div>
-
-    <!-- Рецепты блюд -->
-    <div class="site-card card-7">
-      <div class="site-title">Рецепты блюд</div>
-      <div class="site-description">Находите вкусные и простые рецепты на каждый день.</div>
-      <a href="recipes.html" class="site-link">Перейти</a>
-    </div>
-
   </div>
+
+  <script>
+    // Анимация появления страницы
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </body>
 </html>

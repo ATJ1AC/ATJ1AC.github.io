@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="auth_style.css">
+</head>
+<body class="register-bg" id="page">
+    <div class="container">
+        <h2>Регистрация</h2>
+
+        <form id="registerForm">
+            <input type="text" id="username" placeholder="Логин" required>
+            <input type="password" id="password" placeholder="Пароль" required>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+
+        <p id="message"></p>
+        <a href="login.html">Войти</a>
+    </div>
+
+    <script>
+        // Анимация перед переходом по ссылке
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('page').classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = this.getAttribute('href');
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

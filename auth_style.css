@@ -1,0 +1,156 @@
+/* Обнуление */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Базовые стили body */
+body {
+    font-family: sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    animation: 8s ease-in-out infinite gradientBG;
+    color: #333;
+    transition: opacity 0.5s ease;
+}
+
+/* Анимация исчезновения */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+}
+
+/* Анимация фона */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Фон для страницы входа — зелёный → голубой */
+.login-bg {
+    background: linear-gradient(-45deg, #b8f3bb, #d6fff7, #e0f7fa);
+    background-size: 400% 400%;
+}
+
+/* Фон для страницы регистрации — ярко-розовый */
+.register-bg {
+    background: linear-gradient(-45deg, #ff4d4d, #ff9999, #ffe6e6);
+    background-size: 400% 400%;
+}
+
+/* Контейнер для формы */
+.container {
+    width: 100%;
+    max-width: 360px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    /* Анимация появления */
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1s ease-out forwards;
+}
+
+/* Задержка для разных элементов внутри контейнера */
+.container h2,
+.container form,
+.container #message,
+.container a {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.container h2 { animation-delay: 0.5s; }
+.container form { animation-delay: 0.7s; }
+.container #message { animation-delay: 1.1s; }
+.container a { animation-delay: 1.3s; }
+
+/* Анимации */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Заголовок с чёрным контуром (увеличенная ширина) */
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+    text-shadow:
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
+	letter-spacing: 1px;
+}
+
+/* Поля ввода */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Кнопка */
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Сообщение */
+#message {
+    margin-top: 15px;
+    min-height: 20px;
+    color: green;
+    font-weight: bold;
+}
+
+/* Ссылки */
+a {
+    display: block;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

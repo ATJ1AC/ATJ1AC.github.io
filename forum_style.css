@@ -1,0 +1,124 @@
+/* Обнуление */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Фон с splash.gif на весь экран */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  color: #f0f8ff;
+  position: relative;
+  overflow: hidden;
+  background: url('images/splash.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Затемняющий слой для улучшения читаемости текста над фоном */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 20, 40, 0.7); /* Тёмный полупрозрачный слой */
+  z-index: -1;
+}
+
+/* Контейнер форума */
+.forum-container {
+  width: 100%;
+  max-width: 700px;
+  padding: 30px;
+  margin: 60px auto;
+  background-color: rgba(0, 40, 60, 0.9); /* Более плотный морской синий */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 100, 150, 0.5);
+}
+
+/* Заголовок */
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Форма отправки сообщения */
+.message-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.message-form input,
+.message-form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical;
+  background-color: #e6f2fa;
+  color: #000;
+}
+
+.message-form button {
+  padding: 10px;
+  background-color: #0077aa;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.message-form button:hover {
+  background-color: #005f88;
+}
+
+/* Сообщения */
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.message {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  flex-direction: column-reverse;
+  border-left: 4px solid #00bcd4;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #cceeff;
+}
+
+.username {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.timestamp {
+  color: #cccccc;
+  font-style: italic;
+}
+
+.message-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #f8f8f8;
+}
